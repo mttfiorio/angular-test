@@ -8,11 +8,13 @@
       <li *ngFor="let member of members">{{ member }}</li>
     </ul>
     <div class="add-members-container">
+      <!-- Attribute directive that links newMember to the input value -->
       <input
         #addMemberInput
         type="text"
         placeholder="Name"
         (input)="onInput(addMemberInput.value)"
+        [value]="newMember"
       />
       <button (click)="addMember()">Add</button>
     </div>
@@ -21,5 +23,7 @@
       <input type="text" placeholder="# of groups" />
       <button>Generate</button>
     </div>
+    <!-- Structural directive that adds or remove <p> depending on errorMessage-->
+    <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
   </div>
 </div>
