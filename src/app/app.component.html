@@ -20,8 +20,14 @@
     </div>
 
     <div class="input-container">
-      <input type="text" placeholder="# of groups" />
-      <button>Generate</button>
+      <input
+        #teamsAmountInput
+        (input)="onTeamsAmountInput(teamsAmountInput.value)"
+        [value]="teamsAmount"
+        type="number"
+        placeholder="# of groups"
+      />
+      <button (click)="generateTeams()">Generate</button>
     </div>
     <!-- Structural directive that adds or remove <p> depending on errorMessage-->
     <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
