@@ -32,4 +32,12 @@
     <!-- Structural directive that adds or remove <p> depending on errorMessage-->
     <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
   </div>
+
+  <div *ngIf="teams.length" class="teams-container">
+    <app-team
+      *ngFor="let team of teams; let i = index"
+      [team]="team"
+      [index]="i"
+    ></app-team>
+  </div>
 </div>

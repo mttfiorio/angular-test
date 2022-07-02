@@ -1,0 +1,9 @@
+.team-container {
+  margin-bottom: 1rem;
+}
+
+.team-container ul {
+  border: 0.1rem solid #ccc;
+  padding: 0.5rem;
+  margin: 0;
+}
