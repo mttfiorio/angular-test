@@ -4,13 +4,17 @@
   <div class="ui card">
     <h1>Angular Test</h1>
     <ul class="list">
-      <li>Name 1</li>
-      <li>Name 2</li>
-      <li>Name 3</li>
+      <!-- Structural directive that maps members into list -->
+      <li *ngFor="let member of members">{{ member }}</li>
     </ul>
     <div class="add-members-container">
-      <input type="text" placeholder="Name" />
-      <button>Add</button>
+      <input
+        #addMemberInput
+        type="text"
+        placeholder="Name"
+        (input)="onInput(addMemberInput.value)"
+      />
+      <button (click)="addMember()">Add</button>
     </div>
 
     <div class="input-container">
